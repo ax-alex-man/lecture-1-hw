@@ -1,5 +1,5 @@
-import { ProductsPage } from "./pages/products-page/component";
+import { RestaurantsPage } from "./pages/restaurants-page/component";
 
 export const App = ({ restaurants }) => {
-  return <ProductsPage restaurants={restaurants} />;
+  return <RestaurantsPage restaurants={restaurants} />;
 };

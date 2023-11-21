@@ -1,20 +1,15 @@
+import { Menu } from "../menu/component";
+import { Reviews } from "../reviews/comporent";
+
 export const Restaurant = ({ restaurant }) => {
   return (
     <ul>
       <li>
         Ресторан: {restaurant.name}
         <h3>Меню</h3>
-        <ul>
-          {restaurant.menu.map((x) => (
-            <li>{x.name}</li>
-          ))}
-        </ul>
+        <Menu menu={restaurant.menu} />
         <h3>Отзывы</h3>
-        <ul>
-          {restaurant.reviews.map((x) => (
-            <li>{x.text}</li>
-          ))}
-        </ul>
+        <Reviews reviews={restaurant.reviews} />
         <br />
         <br />
       </li>

@@ -1,7 +1,7 @@
 import { Categories } from "../../components/categories/component";
 import { Restaurants } from "../../components/restaurants/component";
 
-export const ProductsPage = ({ restaurants }) => {
+export const RestaurantsPage = ({ restaurants }) => {
   const categories = Array.from(
     new Set(restaurants.map((restaurant) => restaurant.name))
   );
