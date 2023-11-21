@@ -1,0 +1,1 @@
+export const MAX_DISH_QUANTITY = 5;
