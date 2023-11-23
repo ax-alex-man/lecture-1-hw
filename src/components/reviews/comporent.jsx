@@ -2,12 +2,10 @@ import { Review } from "../review/component";
 
 export const Reviews = ({ reviews }) => {
   return (
-    <ul>
+    <div>
       {reviews.map((review) => (
-        <li>
-          <Review review={review} />
-        </li>
+        <Review review={review} />
       ))}
-    </ul>
+    </div>
   );
 };
