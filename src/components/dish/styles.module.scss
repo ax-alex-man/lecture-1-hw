@@ -1,0 +1,23 @@
+.dish {
+    display: flex;
+}
+
+.image {
+    width: 20rem;
+    height: auto;
+    margin: 0 3rem 0 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.info {
+    font-size: 2rem;
+    flex: 1;
+}
+
+.counter {
+    margin: 0 0 0 auto;
+}

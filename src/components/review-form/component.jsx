@@ -6,6 +6,7 @@ import {
   RATING_STEP,
 } from "../../constants/constants";
 import { Counter } from "../counter/component";
+import styles from "./styles.module.scss";
 
 const DEFAULT_FORM_VALUE = {
   name: "",
@@ -59,10 +60,11 @@ export const ReviewForm = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label htmlFor="name">Name</label>
+    <div className={styles.form}>
+      <div className={styles.control}>
+        <label className={styles.label} htmlFor="name">Name</label>
         <input
+          className={styles.input}
           id="name"
           type="text"
           value={formValue.name}
@@ -71,9 +73,10 @@ export const ReviewForm = () => {
           }
         />
       </div>
-      <div>
-        <label htmlFor="text">Text</label>
-        <input
+      <div className={styles.control}>
+        <label className={styles.label} htmlFor="text">Text</label>
+        <textarea
+          className={styles.input}
           id="text"
           type="text"
           value={formValue.text}
@@ -82,8 +85,8 @@ export const ReviewForm = () => {
           }
         />
       </div>
-      <div>
-        <label htmlFor="rating">Rating</label>
+      <div className={styles.control}>
+        <label className={styles.label} htmlFor="rating">Rating</label>
         <Counter
           value={formValue.rating}
           min={MIN_RATING_QUANTITY}

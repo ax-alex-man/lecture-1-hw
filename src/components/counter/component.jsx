@@ -1,3 +1,5 @@
+import styles from "./styles.module.scss";
+
 export const Counter = ({
   value,
   onIncrement,
@@ -6,12 +8,12 @@ export const Counter = ({
   max = Infinity,
 }) => {
   return (
-    <div>
-      <button onClick={onDecrement} disabled={value === min}>
+    <div className={styles.counter}>
+      <button className={styles.button} onClick={onDecrement} disabled={value === min}>
         -
       </button>
-      &nbsp;{value}&nbsp;
-      <button onClick={onIncrement} disabled={value === max}>
+      <div className={styles.amount}>{value}</div>
+      <button className={styles.button} onClick={onIncrement} disabled={value === max}>
         +
       </button>
     </div>

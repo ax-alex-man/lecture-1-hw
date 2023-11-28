@@ -1,0 +1,12 @@
+.tabs {
+    box-shadow: inset 0px -1px 0px 0px #ccc;
+    padding-left: 1rem;
+
+    > * {
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

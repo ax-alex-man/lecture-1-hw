@@ -1,0 +1,17 @@
+.tab {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ddd;
+    }
+
+    &.active {
+        background-color: #fff;
+        border-bottom-color: transparent;
+    }
+}

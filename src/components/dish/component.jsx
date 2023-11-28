@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MAX_DISH_QUANTITY } from "../../constants/constants";
 import { Counter } from "../counter/component";
+import styles from "./styles.module.scss";
 
 export const Dish = ({ dish }) => {
   const [quantity, setQuantity] = useState(0);
@@ -18,20 +19,21 @@ export const Dish = ({ dish }) => {
   };
 
   return (
-    <table border={0} cellPadding={3}>
-      <tr>
-        <td width={200}>
-          {dish.name} - {dish.price} $
-        </td>
-        <td>
-          <Counter
-            value={quantity}
-            max={MAX_DISH_QUANTITY}
-            onIncrement={handleInecrement}
-            onDecrement={handleDecrement}
-          />
-        </td>
-      </tr>
-    </table>
+    <div className={styles.dish}>
+      <div className={styles.image}>
+        <img src={`https://loremflickr.com/320/240/dish?random=${dish.name}`} loading="lazy" alt="" width={320} height={240} />
+      </div>
+      <div className={styles.info}>
+        {dish.name} - {dish.price} $
+      </div>
+      <div className={styles.counter}>
+        <Counter
+          value={quantity}
+          max={MAX_DISH_QUANTITY}
+          onIncrement={handleInecrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+    </div>
   );
 };
