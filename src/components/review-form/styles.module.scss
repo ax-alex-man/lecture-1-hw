@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.control {
+    display: flex;
+    margin: 1rem 0 0 0;
+}
+
+.label {
+    display: block;
+    width: 6rem;
+    font-size: 1.6rem;
+}
+
+.input {
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+    width: 40rem;
+       box-sizing: border-box;
+       border: 1px solid #ccc;
+       border-radius: 0.5rem;
+}

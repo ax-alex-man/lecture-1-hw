@@ -1,0 +1,13 @@
+.reviews {
+    > * {
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.review {
+    margin: 3rem 0 0 0;
+}

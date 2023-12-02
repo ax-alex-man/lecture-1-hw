@@ -1,10 +1,11 @@
 import { Tab } from "../tab/component";
+import styles from "./styles.module.scss";
 
-export const RestaurantTabs = ({ tabs, onSelect }) => {
+export const RestaurantTabs = ({ tabs, activeTab, onSelect }) => {
   return (
-    <div>
+    <div className={styles.tabs}>
       {tabs.map((tab) => (
-        <Tab onClick={() => onSelect(tab)}>{tab}</Tab>
+        <Tab active={activeTab === tab} onClick={() => onSelect(tab)}>{tab}</Tab>
       ))}
     </div>
   );

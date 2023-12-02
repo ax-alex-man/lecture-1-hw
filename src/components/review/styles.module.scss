@@ -1,0 +1,24 @@
+.review {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    //justify-content: space-between;   
+    //padding: 0 0 0 2rem;
+}
+
+.user { 
+    font-size: 1.4rem;
+    margin: 0 2rem 0 0;
+    color: #555;
+}
+
+.rating {
+    font-size: 1.6rem;
+    color: #844141;
+}
+
+.text {
+    font-size: 2rem;
+    width: 100%;
+    margin: 1rem 0 0 0;
+}

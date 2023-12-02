@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RestaurantTabs } from "../../components/restaurant-tabs/component";
 //import { Restaurants } from "../../components/restaurants/component";
 import { Restaurant } from "../../components/restaurant/component";
+import styles from "./styles.module.scss";
 
 export const RestaurantsPage = ({ restaurants }) => {
   const [selectedRestaurantName, setSelectedRestaurantName] = useState();
@@ -17,12 +18,14 @@ export const RestaurantsPage = ({ restaurants }) => {
   );
 
   return (
-    <div>
+    <div className={styles.wrapper}>
+      <h1 className={styles.heading}>Рестораны</h1>
+
       <RestaurantTabs
+        activeTab={selectedRestaurantName}
         tabs={restaurantNames}
         onSelect={setSelectedRestaurantName}
       />
-      <hr />
 
       {selectedRestaurant && <Restaurant restaurant={selectedRestaurant} />}
 
