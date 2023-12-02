@@ -12,7 +12,7 @@ export const Restaurant = ({ restaurant }) => {
       <h3 className={styles.heading}>Отзывы</h3>
       <Reviews reviews={restaurant.reviews} />
       <h3 className={styles.heading}>Оставьте отзыв:</h3>
-      <ReviewForm />
+      <ReviewForm className={styles.reviewForm} />
     </div>
   );
 };

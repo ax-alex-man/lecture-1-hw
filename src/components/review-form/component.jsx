@@ -7,6 +7,7 @@ import {
 } from "../../constants/constants";
 import { Counter } from "../counter/component";
 import styles from "./styles.module.scss";
+import classNames from "classnames";
 
 const DEFAULT_FORM_VALUE = {
   name: "",
@@ -38,7 +39,7 @@ const reducer = function (state, action) {
   }
 };
 
-export const ReviewForm = () => {
+export const ReviewForm = ({ className }) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
 
   const handleDecrement = () => {
@@ -60,9 +61,11 @@ export const ReviewForm = () => {
   };
 
   return (
-    <div className={styles.form}>
+    <div className={classNames(styles.form, className)}>
       <div className={styles.control}>
-        <label className={styles.label} htmlFor="name">Name</label>
+        <label className={styles.label} htmlFor="name">
+          Name
+        </label>
         <input
           className={styles.input}
           id="name"
@@ -74,7 +77,9 @@ export const ReviewForm = () => {
         />
       </div>
       <div className={styles.control}>
-        <label className={styles.label} htmlFor="text">Text</label>
+        <label className={styles.label} htmlFor="text">
+          Text
+        </label>
         <textarea
           className={styles.input}
           id="text"
@@ -86,7 +91,9 @@ export const ReviewForm = () => {
         />
       </div>
       <div className={styles.control}>
-        <label className={styles.label} htmlFor="rating">Rating</label>
+        <label className={styles.label} htmlFor="rating">
+          Rating
+        </label>
         <Counter
           value={formValue.rating}
           min={MIN_RATING_QUANTITY}
