@@ -1,0 +1,13 @@
+[data-theme="light"] {
+    --theme-button-color: #000;
+    --theme-button-background-color: #eee;
+    --theme-button-background-hover-color: #ddd;
+    --theme-button-border-color: #ddd;
+}
+
+[data-theme="dark"] {
+    --theme-button-color: #fff;
+    --theme-button-background-color: #444;
+    --theme-button-background-hover-color: #222222;
+    --theme-button-border-color: #222222;
+}
