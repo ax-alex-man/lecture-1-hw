@@ -6,16 +6,12 @@ import styles from "./styles.module.scss";
 import { Layout } from "../../components/layout/component";
 
 export const RestaurantsPage = ({ restaurants }) => {
-  const [selectedRestaurantName, setSelectedRestaurantName] = useState();
+  const [selectedRestaurantId, setSelectedRestaurantId] = useState();
 
   if (!restaurants?.length) return null;
 
-  const restaurantNames = Array.from(
-    new Set(restaurants.map((restaurant) => restaurant.name))
-  );
-
   const selectedRestaurant = restaurants.find(
-    (restaurant) => restaurant.name === selectedRestaurantName
+    (restaurant) => restaurant.id === selectedRestaurantId
   );
 
   return (
@@ -23,11 +19,10 @@ export const RestaurantsPage = ({ restaurants }) => {
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Рестораны</h1>
           <RestaurantTabs
-            activeTab={selectedRestaurantName}
-            tabs={restaurantNames}
-            onSelect={setSelectedRestaurantName}
+            activeId={selectedRestaurantId}
+            onSelect={setSelectedRestaurantId}
           />
-          {selectedRestaurant && <Restaurant restaurant={selectedRestaurant} />}
+          {selectedRestaurant && <Restaurant id={selectedRestaurantId} restaurant={selectedRestaurant} />}
           {/* Вариант с использованием списка ресторанов Restaurants, но в данном задании он он не нужен т.к. выводим всего один ресторан */}
           {/* {selectedRestaurant && <Restaurants restaurants={[selectedRestaurant]} />} */}
       </div>

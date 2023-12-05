@@ -2,9 +2,13 @@ import { useState } from "react";
 import { MAX_DISH_QUANTITY } from "../../constants/constants";
 import { Counter } from "../counter/component";
 import styles from "./styles.module.scss";
+import { useSelector } from "react-redux";
+import { selectDishById } from "../../redux/features/entities/dish/selectors";
 
-export const Dish = ({ dish }) => {
+export const Dish = ({ id }) => {
   const [quantity, setQuantity] = useState(0);
+
+  const dish = useSelector((state) => selectDishById(state, id));
 
   const handleDecrement = () => {
     if (quantity > 0) {
@@ -21,7 +25,13 @@ export const Dish = ({ dish }) => {
   return (
     <div className={styles.dish}>
       <div className={styles.image}>
-        <img src={`https://loremflickr.com/320/240/dish?random=${dish.name}`} loading="lazy" alt="" width={320} height={240} />
+        <img
+          src={`https://loremflickr.com/320/240/dish?random=${dish.name}`}
+          loading="lazy"
+          alt=""
+          width={320}
+          height={240}
+        />
       </div>
       <div className={styles.info}>
         {dish.name} - {dish.price} $
