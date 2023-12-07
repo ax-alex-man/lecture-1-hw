@@ -8,6 +8,7 @@ import {
 import { Counter } from "../counter/component";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
+import { Button } from "../button/component";
 
 const DEFAULT_FORM_VALUE = {
   name: "",
@@ -101,6 +102,9 @@ export const ReviewForm = ({ className }) => {
           onIncrement={handleInecrement}
           onDecrement={handleDecrement}
         />
+      </div>
+      <div className={styles.control}>
+          <Button className={styles.submitButton}>Отправить</Button>
       </div>
     </div>
   );
