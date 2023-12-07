@@ -4,11 +4,11 @@ import { RestaurantsPage } from "./pages/restaurants-page/component";
 import "./styles/index.scss";
 import store from "./redux";
 
-export const App = ({ restaurants }) => {
+export const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <RestaurantsPage restaurants={restaurants} />
+        <RestaurantsPage />
       </ThemeProvider>
     </Provider>
   );
