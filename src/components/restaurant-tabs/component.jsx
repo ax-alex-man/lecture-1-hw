@@ -1,11 +1,15 @@
+import { useSelector } from "react-redux";
 import { Tab } from "../tab/component";
 import styles from "./styles.module.scss";
+import { selectRestaurantIds } from "../../redux/features/entities/restaurant/selectors";
 
-export const RestaurantTabs = ({ tabs, activeTab, onSelect }) => {
+export const RestaurantTabs = ({ activeId, onSelect }) => {
+  const restaurantIds = useSelector(selectRestaurantIds);
+
   return (
     <div className={styles.tabs}>
-      {tabs.map((tab) => (
-        <Tab active={activeTab === tab} onClick={() => onSelect(tab)}>{tab}</Tab>
+      {restaurantIds.map((id) => (
+        <Tab id={id} active={activeId === id} onClick={() => onSelect(id)} />
       ))}
     </div>
   );

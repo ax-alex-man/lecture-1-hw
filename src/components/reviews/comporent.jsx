@@ -1,11 +1,17 @@
+import { useSelector } from "react-redux";
 import { Review } from "../review/component";
 import styles from "./styles.module.scss";
+import { selectReviewIdsByRestaurantId } from "../../redux/features/entities/review/selectors";
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = ({ id: restaurantId }) => {
+  const reviewIds = useSelector((state) =>
+    selectReviewIdsByRestaurantId(state, restaurantId)
+  );
+
   return (
     <div className={styles.reviews}>
-      {reviews.map((review) => (
-        <Review review={review} className={styles.review} />
+      {reviewIds.map((id) => (
+        <Review id={id} className={styles.review} />
       ))}
     </div>
   );

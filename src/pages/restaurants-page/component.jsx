@@ -5,31 +5,20 @@ import { Restaurant } from "../../components/restaurant/component";
 import styles from "./styles.module.scss";
 import { Layout } from "../../components/layout/component";
 
-export const RestaurantsPage = ({ restaurants }) => {
-  const [selectedRestaurantName, setSelectedRestaurantName] = useState();
-
-  if (!restaurants?.length) return null;
-
-  const restaurantNames = Array.from(
-    new Set(restaurants.map((restaurant) => restaurant.name))
-  );
-
-  const selectedRestaurant = restaurants.find(
-    (restaurant) => restaurant.name === selectedRestaurantName
-  );
+export const RestaurantsPage = () => {
+  const [selectedRestaurantId, setSelectedRestaurantId] = useState();
 
   return (
     <Layout>
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Рестораны</h1>
-          <RestaurantTabs
-            activeTab={selectedRestaurantName}
-            tabs={restaurantNames}
-            onSelect={setSelectedRestaurantName}
-          />
-          {selectedRestaurant && <Restaurant restaurant={selectedRestaurant} />}
-          {/* Вариант с использованием списка ресторанов Restaurants, но в данном задании он он не нужен т.к. выводим всего один ресторан */}
-          {/* {selectedRestaurant && <Restaurants restaurants={[selectedRestaurant]} />} */}
+        <RestaurantTabs
+          activeId={selectedRestaurantId}
+          onSelect={setSelectedRestaurantId}
+        />
+        {selectedRestaurantId && <Restaurant id={selectedRestaurantId} />}
+        {/* Вариант с использованием списка ресторанов Restaurants, но в данном задании он он не нужен т.к. выводим всего один ресторан */}
+        {/* {selectedRestaurant && <Restaurants restaurants={[selectedRestaurant]} />} */}
       </div>
     </Layout>
   );
