@@ -3,7 +3,7 @@ import { Menu } from "../menu/component";
 import { ReviewForm } from "../review-form/component";
 import { Reviews } from "../reviews/comporent";
 import styles from "./styles.module.scss";
-import { selectRestaurantNameById } from "../../redux/features/entities/restaurant/selectors";
+import { selectRestaurantNameById } from "../../redux/entities/restaurant/selectors";
 
 export const Restaurant = ({ id: restaurantId }) => {
   const name = useSelector((state) =>

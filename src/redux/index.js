@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { restaurant } from "./features/entities/restaurant";
-import { dish } from "./features/entities/dish";
-import { review } from "./features/entities/review";
-import { user } from "./features/entities/user";
+import { restaurant } from "./entities/restaurant";
+import { dish } from "./entities/dish";
+import { review } from "./entities/review";
+import { user } from "./entities/user";
 
 const store = configureStore({
   reducer: {
