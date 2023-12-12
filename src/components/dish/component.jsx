@@ -3,7 +3,7 @@ import { MAX_DISH_QUANTITY } from "../../constants/constants";
 import { Counter } from "../counter/component";
 import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/features/entities/dish/selectors";
+import { selectDishById } from "../../redux/entities/dish/selectors";
 
 export const Dish = ({ id }) => {
   const [quantity, setQuantity] = useState(0);

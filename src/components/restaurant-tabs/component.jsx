@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Tab } from "../tab/component";
 import styles from "./styles.module.scss";
-import { selectRestaurantIds } from "../../redux/features/entities/restaurant/selectors";
+import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors";
 
 export const RestaurantTabs = ({ activeId, onSelect }) => {
   const restaurantIds = useSelector(selectRestaurantIds);

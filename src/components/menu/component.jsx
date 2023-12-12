@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Dish } from "../dish/component";
 import styles from "./styles.module.scss";
-import { selectDishIdsByRestaurantId } from "../../redux/features/entities/dish/selectors";
+import { selectDishIdsByRestaurantId } from "../../redux/entities/dish/selectors";
 
 export const Menu = ({ id: restaurantId }) => {
   const dishIds = useSelector((state) =>

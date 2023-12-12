@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
-import { selectReviewById } from "../../redux/features/entities/review/selectors";
-import { selectUserById } from "../../redux/features/entities/user/selectors";
+import { selectReviewById } from "../../redux/entities/review/selectors";
+import { selectUserById } from "../../redux/entities/user/selectors";
 
 export const Review = ({ id: reviewId, className }) => {
   const review = useSelector((state) => selectReviewById(state, reviewId));
